@@ -46,6 +46,7 @@ class EL_Admin_New {
 		add_action( 'edit_form_top', array( &$this, 'form_top_content' ) );
 		add_action( 'edit_form_after_title', array( &$this, 'form_after_title_content' ) );
 		add_action( 'admin_print_scripts', array( &$this, 'embed_scripts' ) );
+		add_action( 'admin_print_styles-post.php', array( &$this, 'remove_ot_admin_styles'), 12 );
 		add_action( 'admin_print_styles-post-new.php', array( &$this, 'remove_ot_admin_styles'), 12 );
 		add_action( 'save_post_el_events', array( &$this, 'save_eventdata' ), 10, 3 );
 		add_filter( 'enter_title_here', array( &$this, 'change_default_title' ) );
